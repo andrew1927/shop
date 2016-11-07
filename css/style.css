@@ -1,0 +1,65 @@
+
+.main-wrapper header{
+	height: 200px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #17b158;
+	background-image: url("http://soccer-shop.com.ua/templates/a/images/bg_header.jpg");
+}
+.main-wrapper header .logo{
+	width: 300px;
+	height: 67px;
+	background: url("http://soccer-shop.com.ua/images/.t/.w300_85_1425904228_logo.png") no-repeat;
+	background-size: contain;
+}
+.main-wrapper header h1{
+	font:30px SegoeRegular;
+}
+.wrapper{
+	padding: 50px 100px;
+	display: flex;
+	justify-content: space-around;
+}
+.wrapper figure{
+	box-sizing: border-box;
+	 width: 300px;
+	 height: 334px;
+	 background: url(../images/ball.png) no-repeat center;
+	 background-size: contain;
+}
+header .basket{
+	display: flex;
+}
+header .basket .info-basket{
+	display: flex;
+	flex-direction: column;
+} 
+header .basket .logo-basket{
+	width: 52px;
+	height: 48px;
+	background: url(http://soccer-shop.com.ua/templates/a/images/shopping_cart.png) no-repeat;
+}
+.main-wrapper footer{
+	height: 200px;
+	background-color: #6d6f74;
+}
+.wrapper figure{
+	position: relative;
+}
+.wrapper figure figcaption{
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	background-color: #6d6f74;
+	opacity: .7;
+	font: 20px SegoeRegular;
+	text-align: center;
+}
+.wrapper .description{
+	width: 250px;
+}
+.wrapper button{
+	height: 30px;
+}

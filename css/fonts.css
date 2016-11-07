@@ -1,0 +1,12 @@
+@font-face {
+    font-family: SegoeLight;
+    src: url(../fonts/SegoeUILight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: SegoeRegular;
+    src: url(../fonts/SegoeUIRegular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
