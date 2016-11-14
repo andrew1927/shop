@@ -1,4 +1,8 @@
-
+.ball{
+	width: 400px;
+	height: 268px;
+	background-size: contain;
+}
 .main-wrapper header{
 	height: 200px;
 	width: 100%;
@@ -17,15 +21,15 @@
 .main-wrapper header h1{
 	font:30px SegoeRegular;
 }
-.wrapper{
+.wrapper .wrap{
 	padding: 50px 100px;
 	display: flex;
 	justify-content: space-around;
 }
 .wrapper figure{
 	box-sizing: border-box;
-	 width: 224px;
-	 height: 224px;
+	 width: 400px;
+	 height: 268px;
 }
 header .basket{
 	display: flex;
