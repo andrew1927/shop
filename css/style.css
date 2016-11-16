@@ -21,7 +21,7 @@
 .main-wrapper header h1{
 	font:30px SegoeRegular;
 }
-.wrapper .wrap{
+.wrapper{
 	padding: 50px 100px;
 	display: flex;
 	justify-content: space-around;

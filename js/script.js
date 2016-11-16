@@ -1,87 +1,83 @@
-var	products = [ 
-				{
-					image:  "images/ball2.jpg",
-					description: {
-						shortDescription: "<p>Мяч для футзала Adidas Euro 2016 Sala 65 - это модель профессионального уровня предназначенная для игры на жестки игровых покрытиях.Каркас мяча имеет классическую конструкцию из 18-х панелей, соединенных прочным ручным швом.</p><p>Adidas Euro 2016 Sala 65 - это высокое качество по приемлемой цене, поэтому данная модель пользуется большим спросом среди посетителей нашего магазина. Поторопитесь оформить заказ, пока модель есть в наличии.</p>",
-						table: { 
-							code: "AP0374",
-							model: "FINALE",
-							size:	"РАЗМЕР №5",
-							weight:	"от 405 до 440 грамм",
-							produce:	"Adidas"
+var product1 =	[
+					{
+						image:  'url("images/ball2.jpg")',
+						characteristics: {
+							shortDescription: {
+								p1: "Футбольный мяч Динамо, сделаный из натуральной кожи.Специально покрытый полиуретановым покрытием для того, чтобы мяч меньше впитывал влагу.",
+								p2: "Это прекрасный подарок фанатам футбольного клуба Динамо Киев."
+							},
+							table: { 
+								code: "AP0374",
+								model: "FINALE",
+								size:	"РАЗМЕР №5",
+								weight:	"от 405 до 440 грамм",
+								produce:	"Adidas"
+							},
 						},
+						price: 2500
 					},
-					price: 2500
-				},
-				{
-					image:  "images/ball3.jpg",
-					description: {
-						shortDescription: "<p>Футбольный мяч Динамо, сделаный из натуральной кожи.Специально покрытый полиуретановым покрытием для того, чтобы мяч меньше впитывал влагу.</p><p>Это прекрасный подарок фанатам футбольного клуба Динамо Киев.</p>",
-						table: { 
-							code: "AP0500",
-							model: "EURO 2016",
-							size:	"РАЗМЕР №4",
-							weight:	"от 400 до 450 грамм",
-							produce:	"Adidas"
+					{
+						image:  'url("images/ball3.jpg")',
+						characteristics: {
+							shortDescription: {
+								p1: "Футбольный мяч Динамо, сделаный из натуральной кожи.Специально покрытый полиуретановым покрытием для того, чтобы мяч меньше впитывал влагу.",
+								p2: "Это прекрасный подарок фанатам футбольного клуба Динамо Киев."
+							},
+							table: { 
+								code: "AP0100",
+								model: "EURO",
+								size:	"РАЗМЕР №5",
+								weight:	"от 400 до 450 грамм",
+								produce:	"NIKE"
+							},
 						},
-					},
-					price: 900
-				},
-				{
-					image:  "images/ball4.jpg",
-					description: {
-						shortDescription: "<p>Футбольный мяч Динамо, сделаный из натуральной кожи.Специально покрытый полиуретановым покрытием для того, чтобы мяч меньше впитывал влагу.</p><p>Это прекрасный подарок фанатам футбольного клуба Динамо Киев.</p>",
-						table: { 
-							code: "AP0500",
-							model: "EURO 2016",
-							size:	"РАЗМЕР №4",
-							weight:	"от 400 до 450 грамм",
-							produce:	"Nike"
-						},
-					},
-					price: 700
-				}
-				];
+						price: 900
+					}
+				]
 
-var elWrapper = document.getElementsByClassName("wrapper")[0];
+	elImgBall = document.getElementsByClassName("ball")[0],
+	elShortDescr1 = document.getElementsByClassName("shortdescr")[0],
+	elShortDescr2 = document.getElementsByClassName("shortdescr")[1],
+	elTableInfo1 = document.getElementsByClassName("info")[0], 
+	elTableInfo2 = document.getElementsByClassName("info")[1], 
+	elTableInfo3 = document.getElementsByClassName("info")[2], 
+	elTableInfo4 = document.getElementsByClassName("info")[3], 
+	elTableInfo5 = document.getElementsByClassName("info")[4],
+	elPrice = document.getElementsByClassName("amount")[0];
 
-	initProduct();
+
+	function addDescription(product){
+		elImgBall.style.background =  product.image;
+		elShortDescr1.innerHTML = product.characteristics.shortDescription.p1;
+		elShortDescr2.innerHTML = product.characteristics.shortDescription.p2;
+		elTableInfo1.innerHTML = product.characteristics.table.code;
+		elTableInfo2.innerHTML = product.characteristics.table.model;
+		elTableInfo3.innerHTML = product.characteristics.table.size;
+		elTableInfo4.innerHTML = product.characteristics.table.weight;
+		elTableInfo5.innerHTML = product.characteristics.table.produce;
+		elPrice.innerHTML = product.price;
+	}
+
 
 	function compareRandom(a, b) {
 	  return Math.random() - 0.5;
 	}	
 
 	function initProduct(){
-		products.sort(compareRandom);
-		products.forEach(function(item){
-			createProduct(item);
-		});
+		product1.sort(compareRandom);
+		addDescription(product1[0]);
 	}			
-				
-	function createProduct(item){
-		var elDivImg = document.createElement("div");
-			elDivImg.classList.add("wrap");
-			
-		elDivImg.innerHTML = '<img class="ball" src=' + item.image + ' alt="ball" />'+
-		'<div class="description">' + 
-		'<h1>Описание:</h1>' +
-		'<hr/>' +
-		'<div class="shortdescr">' + item.description.shortDescription + '</div>' +
-		'<table>' +
-		'<tr><th>Мячи</th></tr>' +
-		'<tr><td>Артикул:</td><td>' + item.description.table.code + '</td></tr>' +
-		'<tr><td>Модель:</td><td>' + item.description.table.model + '</td></tr>' +
-		'<tr><td>Размер:</td><td>' + item.description.table.size + '</td></tr>' +
-		'<tr><td>Вес:</td><td>' + item.description.table.weight + '</td></tr>' +
-		'<tr><td>Производитель:</td><td>' + item.description.table.produce + '</td></tr>' +
-		'</table>' +
-		'</div>' +
-		'<div class="price">Цена:' +
-		'<span class="amount">' + item.price + ' грн.' + '</span>' +
-		'</div>' +
-		'<button>В корзину</button>';
-		elWrapper.appendChild(elDivImg);
-	}
+
+	initProduct();
+
+
+
+
+
+	
+
+
+
 
 
 
