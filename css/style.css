@@ -25,6 +25,7 @@
 	padding: 50px 100px;
 	display: flex;
 	justify-content: space-around;
+	display: none;
 }
 .wrapper figure{
 	box-sizing: border-box;
@@ -74,4 +75,22 @@ table tr td{
 }
 .wrapper .description p{
 	margin: 10px;
+}
+
+/***********main-page*************/
+.main-page .products{
+	display: flex;
+	width: 900px;
+	height: 200px;
+	margin: 20px auto;
+	border: 2px solid black;
+}
+.products .mainball{
+	width: 220px;
+	height: 150px;
+	margin: 25px 0;
+	background-size: contain;
+}
+.products .about, .products a{
+	margin: 100px 0;
 }

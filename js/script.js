@@ -1,4 +1,4 @@
-var product1 =	[
+var products =	[
 					{
 						image:  'url("images/ball2.jpg")',
 						characteristics: {
@@ -14,7 +14,8 @@ var product1 =	[
 								produce:	"Adidas"
 							},
 						},
-						price: 2500
+						price: 2500,
+						mainDescription: "Мяч футбольный Adidas Finale 16 Top Training AP0373 FIFA размер 5"
 					},
 					{
 						image:  'url("images/ball3.jpg")',
@@ -43,7 +44,9 @@ var product1 =	[
 	elTableInfo3 = document.getElementsByClassName("info")[2], 
 	elTableInfo4 = document.getElementsByClassName("info")[3], 
 	elTableInfo5 = document.getElementsByClassName("info")[4],
-	elPrice = document.getElementsByClassName("amount")[0];
+	elPrice = document.getElementsByClassName("amount")[0],
+	elImgBallMain = document.getElementsByClassName("mainball")[0],
+	elAbout = document.getElementsByClassName("about")[0];
 
 
 	function addDescription(product){
@@ -56,19 +59,30 @@ var product1 =	[
 		elTableInfo4.innerHTML = product.characteristics.table.weight;
 		elTableInfo5.innerHTML = product.characteristics.table.produce;
 		elPrice.innerHTML = product.price;
+		elImgBallMain.style.backgroundImage = product.image;
+
+		elAbout.innerHTML = product.mainDescription;
 	}
 
 
-	function compareRandom(a, b) {
-	  return Math.random() - 0.5;
-	}	
+	// function compareRandom(a, b) {
+	//   return Math.random() - 0.5;
+	// }	
 
-	function initProduct(){
-		product1.sort(compareRandom);
-		addDescription(product1[0]);
-	}			
+	// function initProduct(){
+	// 	products.sort(compareRandom);
+	// 	addDescription(products[0]);
+	// }			
 
-	initProduct();
+	// initProduct();
+
+	addDescription(products[0]);
+
+	var elAnchor = document.getElementsByClassName("todescription")[0];
+
+	elAnchor.addEventListener("click", function(){
+
+	})
 
 
 
